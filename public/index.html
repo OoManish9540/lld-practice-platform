@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LLD Practice Platform</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>LLD Practice Platform</h1>
+    <div class="learner-box">
+      Learner ID:
+      <input id="learnerId" placeholder="e.g. manish" />
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="practice">Practice</button>
+    <button class="tab-btn" data-tab="history">History</button>
+  </nav>
+
+  <main>
+    <section id="practice-tab" class="tab-panel active">
+      <div id="problem-list-view">
+        <h2>Choose a problem</h2>
+        <div id="problems" class="problem-grid"></div>
+      </div>
+
+      <div id="attempt-view" class="hidden">
+        <button id="backToProblems" class="link-btn">&larr; Back to problems</button>
+        <h2 id="attempt-problem-title"></h2>
+        <p id="attempt-problem-desc" class="muted"></p>
+        <div>
+          <strong>Requirements</strong>
+          <ul id="attempt-requirements"></ul>
+        </div>
+
+        <div class="form-row">
+          <label>Submission format</label>
+          <select id="submissionFormat">
+            <option value="text">Text (design write-up)</option>
+            <option value="code">Code</option>
+          </select>
+        </div>
+        <textarea id="submissionContent" rows="16" placeholder="Write your design / code here. Mention classes, responsibilities, relationships, and reasoning for trade-offs..."></textarea>
+        <button id="submitBtn">Submit for feedback</button>
+
+        <div id="evaluation-result" class="hidden"></div>
+      </div>
+    </section>
+
+    <section id="history-tab" class="tab-panel">
+      <h2>Your attempt history</h2>
+      <button id="refreshHistory" class="link-btn">Refresh</button>
+      <div id="history-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

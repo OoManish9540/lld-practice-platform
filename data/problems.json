@@ -1,0 +1,109 @@
+[
+  {
+    "id": "parking-lot",
+    "title": "Parking Lot System",
+    "description": "Design a parking lot that supports multiple vehicle types (motorcycle, car, bus) and multiple spot sizes. The system should assign an available spot on entry and free it on exit, and compute a parking fee.",
+    "requirements": [
+      "Support at least 3 vehicle types with different size requirements",
+      "Assign the most appropriate available spot on vehicle entry",
+      "Release the spot and compute a fee when the vehicle exits",
+      "Handle the case where the lot is full",
+      "Design should not require rewriting core classes if a new vehicle type is added"
+    ],
+    "constraints": [
+      "Single building, multiple floors",
+      "Assume payment happens on exit only"
+    ],
+    "difficulty": "Medium",
+    "tags": [
+      "state",
+      "factory",
+      "allocation"
+    ]
+  },
+  {
+    "id": "elevator-system",
+    "title": "Elevator Control System",
+    "description": "Design the control system for a bank of elevators in a building. The system should accept hall calls (up/down) and cabin calls (floor selection) and dispatch elevators efficiently.",
+    "requirements": [
+      "Support multiple elevators operating independently",
+      "Handle both external hall requests and internal floor requests",
+      "Pick a reasonable elevator to dispatch for a new request",
+      "Model elevator direction and door state explicitly",
+      "Design should allow a different dispatch/scheduling strategy to be swapped in later"
+    ],
+    "constraints": [
+      "Single building",
+      "No need to simulate real time precisely"
+    ],
+    "difficulty": "Hard",
+    "tags": [
+      "state machine",
+      "strategy",
+      "scheduling"
+    ]
+  },
+  {
+    "id": "vending-machine",
+    "title": "Vending Machine",
+    "description": "Design a vending machine that accepts coins/cash, lets a user select a product, dispenses it if funds and stock are sufficient, and returns change.",
+    "requirements": [
+      "Model the machine's states explicitly (idle, has money, dispensing, out of stock, etc.)",
+      "Handle insufficient funds and insufficient stock as explicit cases",
+      "Support returning change and cancelling a transaction",
+      "Track inventory per product slot",
+      "Design should make it easy to add a new payment method (e.g. card) later"
+    ],
+    "constraints": [
+      "Single machine, not networked",
+      "Assume exact set of coin denominations is fixed"
+    ],
+    "difficulty": "Easy",
+    "tags": [
+      "state machine",
+      "inventory"
+    ]
+  },
+  {
+    "id": "rate-limiter",
+    "title": "API Rate Limiter",
+    "description": "Design an in-process rate limiter that can be attached to an API to limit how many requests a client can make in a given time window.",
+    "requirements": [
+      "Support per-client limits (e.g. by API key or user id)",
+      "Support at least one rate-limiting algorithm explicitly (e.g. token bucket, sliding window)",
+      "Make it possible to plug in a different algorithm without changing calling code",
+      "Handle concurrent requests from the same client safely",
+      "Explain what happens when a client exceeds their limit"
+    ],
+    "constraints": [
+      "Single process, in-memory state is acceptable",
+      "No need to design a distributed rate limiter"
+    ],
+    "difficulty": "Medium",
+    "tags": [
+      "strategy",
+      "concurrency"
+    ]
+  },
+  {
+    "id": "splitwise",
+    "title": "Expense Splitting App (Splitwise-lite)",
+    "description": "Design the core domain for an app where a group of users can log shared expenses and split them (equally, by exact amounts, or by percentage), and see who owes whom.",
+    "requirements": [
+      "Support at least equal and exact-amount splits, modeled so a new split type can be added later",
+      "Track balances between every pair of users in a group",
+      "Support simplifying/settling a debt between two users",
+      "Handle an expense involving users not all in the same group cleanly",
+      "Explain how you'd avoid floating point rounding issues in balances"
+    ],
+    "constraints": [
+      "Single currency",
+      "No need to build the notification/payment integration"
+    ],
+    "difficulty": "Medium",
+    "tags": [
+      "strategy",
+      "domain modeling"
+    ]
+  }
+]
